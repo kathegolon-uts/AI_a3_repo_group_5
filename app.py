@@ -101,19 +101,24 @@ Let's find the perfect track for you! 🚀
                     """, unsafe_allow_html=True)
 
         if mood == "sad":
+
             sad_uri = recommend_song(moodify_df, "sad")
             happy_uri = recommend_song(moodify_df, "happy")
 
             if sad_uri:
                 embed_spotify(sad_uri)
 
-            # ---Subtitle for happy uplifting song ---
+            # --- Separator line between songs ---
+            st.markdown("<hr style='margin-top: 30px; margin-bottom: 30px;'>", unsafe_allow_html=True)
+
+            # --- Subtitle for uplifting song ---
             st.markdown("""
-                        <h3 style='text-align: center;'>🌞 Here's a happy song to lift your spirit:</h3>
-                        """, unsafe_allow_html=True)
-            
+                <h3 style='text-align: center;'>🌞 Here's a happy song to lift your spirit:</h3>
+            """, unsafe_allow_html=True)
+
             if happy_uri:
                 embed_spotify(happy_uri)
+
         else:
             uri = recommend_song(moodify_df, mood)
             if uri:
