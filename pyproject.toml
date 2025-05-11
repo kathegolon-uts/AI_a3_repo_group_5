@@ -7,6 +7,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+streamlit = "^1.45.0"
+transformers = "^4.51.3"
+torch = "^2.7.0"
+pillow = "^11.2.1"
+pandas = "^2.2.3"
+streamlit-lottie = "^0.0.5"
 
 
 [build-system]
