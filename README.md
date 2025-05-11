@@ -53,7 +53,6 @@ AI_a3_repo_group_5/
 │   ├── __init__.py                 # (empty) marks src as a package
 │   ├── emotion_detection.py        # Emotion detection functions
 │   ├── music_recommender.py        # Music mood mapping + song recommendation
-│   └── utils.py                    # Helper functions (loading models, preprocessing, etc.)
 │
 ├── .gitignore                      # Keep repo clean (ignoring temp files, cache, etc.)
 ├── .python-version                 # Python version control

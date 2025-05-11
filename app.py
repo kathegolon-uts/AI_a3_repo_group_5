@@ -90,12 +90,12 @@ Let's find the perfect track for you! 🚀
 
         st.success(f"Your detected mood is: **{mood.capitalize()}**")
 
-        # --- 🎧 Main Title ---
+        # ---Main Title ---
         st.markdown("""
             <h2 style='text-align: center;'>🎧 Recommended Track</h2>
         """, unsafe_allow_html=True)
 
-        # --- 🎵 Subtitle before first song ---
+        # ---Subtitle before first song ---
         st.markdown("""
                     <h3 style='text-align: center;'>🎵 Here's a song matching your current mood:</h3>
                     """, unsafe_allow_html=True)
@@ -107,7 +107,7 @@ Let's find the perfect track for you! 🚀
             if sad_uri:
                 embed_spotify(sad_uri)
 
-            # --- 🌞 Subtitle for happy uplifting song ---
+            # ---Subtitle for happy uplifting song ---
             st.markdown("""
                         <h3 style='text-align: center;'>🌞 Here's a happy song to lift your spirit:</h3>
                         """, unsafe_allow_html=True)
