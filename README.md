@@ -47,14 +47,20 @@ streamlit run app.py
 ```bash
 AI_a3_repo_group_5/
 │
-├── .python-version         # Defines local Python version (3.11.4)
-├── pyproject.toml           # Poetry project settings and dependencies
-├── README.md                # Project instructions
-├── app.py                   # Streamlit application
-└── src/                     # Source code (models, utils, etc.)
-    ├── emotion_detection.py
-    ├── music_recommender.py
-    └── utils.py
+├── notebooks/                      # EDA and preprocessing
+├── reports/                        # Final Report and Slides
+├── src/                            # Source code folder
+│   ├── __init__.py                 # (empty) marks src as a package
+│   ├── emotion_detection.py        # Emotion detection functions
+│   ├── music_recommender.py        # Music mood mapping + song recommendation
+│   └── utils.py                    # Helper functions (loading models, preprocessing, etc.)
+│
+├── .gitignore                      # Keep repo clean (ignoring temp files, cache, etc.)
+├── .python-version                 # Python version control
+├── app.py                          # Streamlit main app
+├── pyproject.toml                  # Poetry dependency management
+├── README.md                       # Project documentation
+
 ```
 
 ## Contributors
