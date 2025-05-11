@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "ai-a3-repo-group-5"
+version = "0.1.0"
+description = ""
+authors = ["kathegolon-uts <katherin.a.gomezlondono@student.uts.edu.au>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
