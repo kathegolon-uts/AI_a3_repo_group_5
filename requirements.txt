@@ -1,0 +1,6 @@
+streamlit
+streamlit-lottie
+transformers
+torch
+pandas
+requests
