@@ -149,6 +149,17 @@ def main():
                 embed_spotify(uri)
             else:
                 st.error("Sorry, no songs found for your mood.")
+        
+        st.markdown("<h3 style='text-align: center;'> Did you enjoy the recommendation?</h3>", unsafe_allow_html=True)
+        
+        col1, col2, col3, col4 = st.columns([8, 1, 1, 10])
+        with col2:
+            if st.button("👍"):
+                pass  # You can store feedback or just leave it as a visual interaction
+        with col4:
+            if st.button("👎"):
+                pass
+
 
 if __name__ == "__main__":
     main()
