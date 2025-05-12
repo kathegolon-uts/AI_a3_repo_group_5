@@ -51,7 +51,7 @@ def main():
     # Title and description
     st.markdown("<h1 style='text-align: center;'>Mood-Based Music Recommender 🎵 🎶</h1>", unsafe_allow_html=True)
     st.markdown("""
-    <div style="font-size: 18px; line-height: 1.8; padding: 10px 20px; background-color: #f9f9f9; border-radius: 10px;">
+    <div style="font-size: 18px; line-height: 1.8; padding: 10px 20px; border-radius: 10px;">
 
     <h2 style="text-align: center;">👋 Welcome!</h2>
 
