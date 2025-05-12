@@ -49,28 +49,50 @@ def main():
         st_lottie(welcome_lottie, height=250, key="welcome")
 
     # Title and description
-    st.title("🎵 AI Mood-Based Music Recommender 🎶")
+    st.markdown("<h1 style='text-align: center;'>Mood-Based Music Recommender 🎵 🎶</h1>", unsafe_allow_html=True)
     st.markdown("""
-Welcome! 👋  
-This app detects your mood from a selfie and recommends music to match (or uplift) your mood.  
-Here's how it works:
-- 📸 Upload a selfie (jpg/jpeg/png).
-- 🤖 We'll detect your mood using AI facial recognition.
-- 🎶 Get a Spotify song that fits your vibe!
+    <div style="font-size: 18px; line-height: 1.8; padding: 10px 20px; background-color: #f9f9f9; border-radius: 10px;">
 
-Let's find the perfect track for you! 🚀
-""")
+    <h2 style="text-align: center;">👋 Welcome!</h2>
+
+    <p style="text-align: center;">This app detects your mood from a selfie and recommends music to match — or uplift — your mood.</p>
+
+    <h4>🎯 Here's how it works:</h4>
+    <ul>
+        <li>📸 <b>Upload a selfie</b> (jpg/jpeg/png)</li>
+        <li>🤖 <b>We detect your mood</b> using AI facial recognition</li>
+        <li>🎶 <b>Get a Spotify song</b> that fits your vibe</li>
+    </ul>
+
+    <p style="text-align: center; font-size: 25px;">Let’s find the perfect track for you! 🚀</p>
+
+    </div>
+    """, unsafe_allow_html=True)
 
     # Load the Moodify dataset
     moodify_df = load_moodify_dataset("data/278k_labelled_uri.csv")
 
-    # File uploader
-    uploaded_file = st.file_uploader(
-        "Upload a selfie (jpg/jpeg/png)",
-        type=["jpg", "jpeg", "png"]
-    )
 
-    if uploaded_file:
+    # Centered header
+    st.markdown("<h6 style='text-align: center;'>📸 Choose how you'd like to upload your photo:</h4>", unsafe_allow_html=True)
+
+    # Center the radio buttons
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        selfie_option = st.radio(
+            "",  # No label here, it's in the header above
+            ("Take a selfie (camera)", "Upload an image"),
+            horizontal=True
+        )
+
+    # Display input based on selection
+    if selfie_option == "Take a selfie (camera)":
+        uploaded_file = st.camera_input("Take a selfie (camera)")
+    elif selfie_option == "Upload an image":
+        uploaded_file = st.file_uploader("Upload your picture (jpg/jpeg/png)", type=["jpg", "jpeg", "png"])
+
+
+    if uploaded_file is not None:
         # Center uploaded image manually
         img_data = uploaded_file.getvalue()
         b64 = base64.b64encode(img_data).decode()
@@ -88,7 +110,9 @@ Let's find the perfect track for you! 🚀
             emotion = detect_emotion(uploaded_file)
             mood = map_emotion_to_mood(emotion)
 
-        st.success(f"Your detected mood is: **{mood.capitalize()}**")
+        mood_emoji = {"happy": "😊", "sad": "😢", "calm": "😐"}
+        st.success(f"Your detected mood is: **{mood.capitalize()}** {mood_emoji.get(mood, '')}")
+
 
         # ---Main Title ---
         st.markdown("""
