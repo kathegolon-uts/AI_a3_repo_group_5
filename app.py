@@ -110,7 +110,7 @@ def main():
             emotion = detect_emotion(uploaded_file)
             mood = map_emotion_to_mood(emotion)
 
-        mood_emoji = {"happy": "😊", "sad": "😢", "calm": "😐"}
+        mood_emoji = {"happy": "😊", "sad": "😢", "calm": "😐", "energetic": "⚡"}
         st.success(f"Your detected mood is: **{mood.capitalize()}** {mood_emoji.get(mood, '')}")
 
 
@@ -150,15 +150,15 @@ def main():
             else:
                 st.error("Sorry, no songs found for your mood.")
         
-        st.markdown("<h3 style='text-align: center;'> Did you enjoy the recommendation?</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>🎶 Did you enjoy your song recommendation?</h3>", unsafe_allow_html=True)
         
         col1, col2, col3, col4 = st.columns([8, 1, 1, 10])
         with col2:
             if st.button("👍"):
-                pass  # You can store feedback or just leave it as a visual interaction
+                st.success("Thanks for your feedback! 🎵")
         with col4:
             if st.button("👎"):
-                pass
+                st.warning("Thanks for your feedback! We'll try better next time! 🎶")
 
 
 if __name__ == "__main__":
