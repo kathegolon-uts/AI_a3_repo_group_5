@@ -13,6 +13,8 @@ torch = "^2.7.0"
 pillow = "^11.2.1"
 pandas = "^2.2.3"
 streamlit-lottie = "^0.0.5"
+matplotlib = "^3.10.3"
+seaborn = "^0.13.2"
 
 
 [build-system]
