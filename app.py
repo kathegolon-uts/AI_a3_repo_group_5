@@ -152,14 +152,25 @@ def main():
         
         st.markdown("<h3 style='text-align: center;'>🎶 Did you enjoy your song recommendation?</h3>", unsafe_allow_html=True)
         
+        # Create columns
         col1, col2, col3, col4 = st.columns([8, 1, 1, 10])
+
+        # Initialize feedback state
+        feedback = None
+
+        # Buttons in narrow columns
         with col2:
             if st.button("👍"):
-                st.success("Thanks for your feedback! 🎵")
+                feedback = "positive"
         with col4:
             if st.button("👎"):
-                st.warning("Thanks for your feedback! We'll try better next time! 🎶")
+                feedback = "negative"
 
+        # Display feedback message outside the columns
+        if feedback == "positive":
+            st.success("Thanks for your feedback! 🎵")
+        elif feedback == "negative":
+            st.warning("Thanks for your feedback! We'll try better next time! 🎶")
 
 if __name__ == "__main__":
     main()
