@@ -72,25 +72,40 @@ def main():
     # Load the Moodify dataset
     moodify_df = load_moodify_dataset("data/278k_labelled_uri.csv")
 
+    # --- User Consent Agreement ---
+    st.markdown("""
+    <div style="background-color:#f0f2f6; padding:15px; border-radius:10px;">
+        <h4 style="text-align:center;">🛡️ User Consent</h4>
+        <p style="text-align:center; font-size:16px;">
+            By uploading or capturing a photo, you consent to the use of your image for mood detection within this session only. 
+            No images are stored or shared. All processing happens in real-time and is fully anonymised.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    # Centered header
-    st.markdown("<h6 style='text-align: center;'>📸 Choose how you'd like to upload your photo:</h4>", unsafe_allow_html=True)
+    # Ask user to accept
+    consent = st.checkbox("I consent to the processing of my uploaded image for this session.")
 
-    # Center the radio buttons
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        selfie_option = st.radio(
-            "",  # No label here, it's in the header above
-            ("Take a selfie (camera)", "Upload an image"),
-            horizontal=True
-        )
+    if consent:
+        # Display upload options only if consent is given
+        st.markdown("<h6 style='text-align: center;'>📸 Choose how you'd like to upload your photo:</h4>", unsafe_allow_html=True)
 
-    # Display input based on selection
-    if selfie_option == "Take a selfie (camera)":
-        uploaded_file = st.camera_input("Take a selfie (camera)")
-    elif selfie_option == "Upload an image":
-        uploaded_file = st.file_uploader("Upload your picture (jpg/jpeg/png)", type=["jpg", "jpeg", "png"])
+        # Center the radio buttons
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            selfie_option = st.radio(
+                "",  # No label here, it's in the header above
+                ("Take a selfie (camera)", "Upload an image"),
+                horizontal=True
+            )
 
+        # Display input based on selection
+        if selfie_option == "Take a selfie (camera)":
+            uploaded_file = st.camera_input("Take a selfie (camera)")
+        elif selfie_option == "Upload an image":
+            uploaded_file = st.file_uploader("Upload your picture (jpg/jpeg/png)", type=["jpg", "jpeg", "png"])
+    else:
+        uploaded_file = None
 
     if uploaded_file is not None:
         # Center uploaded image manually
@@ -149,9 +164,9 @@ def main():
                 embed_spotify(uri)
             else:
                 st.error("Sorry, no songs found for your mood.")
-        
+            
         st.markdown("<h3 style='text-align: center;'>🎶 Did you enjoy your song recommendation?</h3>", unsafe_allow_html=True)
-        
+            
         # Create columns
         col1, col2, col3, col4 = st.columns([8, 1, 1, 10])
 
