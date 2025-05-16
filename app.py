@@ -41,7 +41,7 @@ def embed_spotify(uri: str):
 # ----------------------------- Streamlit App ----------------------------- #
 
 def main():
-    st.set_page_config(page_title="AI Mood-Based Music Recommender 🎵", layout="centered")
+    st.set_page_config(page_title="Melofy", layout="centered")
     st.markdown("<h1 style='text-align: center; font-family: Arial, sans-serif;'>Melofy</h1>",
     unsafe_allow_html=True)
     st.markdown("<h6 style='text-align: center;'>The AI Mood-Based Music Recommender 🎵 🎶</h2>", unsafe_allow_html=True)
