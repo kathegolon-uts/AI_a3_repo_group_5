@@ -76,7 +76,7 @@ def main():
 
     # --- User Consent Agreement ---
     st.markdown("""
-    <div style="background-color:#f0f2f6; padding:15px; border-radius:10px;">
+    <div style="background-color:#4a4a4a; padding:15px; border-radius:10px;">
         <h4 style="text-align:center;">🛡️ User Consent</h4>
         <p style="text-align:center; font-size:16px;">
             By uploading or capturing a photo, you consent to the use of your image for mood detection within this session only. 
