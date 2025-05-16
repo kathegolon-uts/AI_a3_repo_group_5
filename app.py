@@ -42,6 +42,9 @@ def embed_spotify(uri: str):
 
 def main():
     st.set_page_config(page_title="AI Mood-Based Music Recommender 🎵", layout="centered")
+    st.markdown("<h1 style='text-align: center; font-family: Arial, sans-serif;'>Melofy</h1>",
+    unsafe_allow_html=True)
+    st.markdown("<h6 style='text-align: center;'>The AI Mood-Based Music Recommender 🎵 🎶</h2>", unsafe_allow_html=True)
 
     # Welcome Lottie BEFORE title
     welcome_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_3vbOcw.json")
@@ -49,11 +52,10 @@ def main():
         st_lottie(welcome_lottie, height=250, key="welcome")
 
     # Title and description
-    st.markdown("<h1 style='text-align: center;'>Mood-Based Music Recommender 🎵 🎶</h1>", unsafe_allow_html=True)
     st.markdown("""
     <div style="font-size: 18px; line-height: 1.8; padding: 10px 20px; border-radius: 10px;">
 
-    <h2 style="text-align: center;">👋 Welcome!</h2>
+    <h3 style="text-align: center;">👋 Welcome!</h3>
 
     <p style="text-align: center;">This app detects your mood from a selfie and recommends music to match — or uplift — your mood.</p>
 
@@ -186,6 +188,19 @@ def main():
             st.success("Thanks for your feedback! 🎵")
         elif feedback == "negative":
             st.warning("Thanks for your feedback! We'll try better next time! 🎶")
+    st.markdown(
+    """
+    <div style='position: fixed; bottom: 10px; right: 10px; text-align: right; font-size: 12px; color: gray;'>
+        <b>Contributors:</b><br>
+        Jaime Garcia y Garcia<br>
+        Katherin Gomez Londono<br>
+        Miguel Ramal<br>
+        Spenser Gautama<br>
+        Dipesh Shrestha
+    </div>
+    """,
+    unsafe_allow_html=True)
+
 
 if __name__ == "__main__":
     main()
