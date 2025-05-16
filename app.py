@@ -190,7 +190,7 @@ def main():
             st.warning("Thanks for your feedback! We'll try better next time! 🎶")
     st.markdown(
     """
-    <div style='position: fixed; bottom: 10px; right: 10px; text-align: right; font-size: 12px; color: gray;'>
+    <div style='position: fixed; bottom: 60px; right: 10px; text-align: right; font-size: 12px; color: gray;'>
         <b>Contributors:</b><br>
         Jaime Garcia y Garcia<br>
         Katherin Gomez Londono<br>
