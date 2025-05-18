@@ -1,4 +1,4 @@
-# AI Mood-Based Music Recommendation System 🎵😊
+# Melofy: The AI Mood-Based Music Recommendation System 🎵😊
 
 ## Overview
 
@@ -47,18 +47,30 @@ streamlit run app.py
 ```bash
 AI_a3_repo_group_5/
 │
-├── notebooks/                      # EDA and preprocessing
-├── reports/                        # Final Report and Slides
-├── src/                            # Source code folder
-│   ├── __init__.py                 # (empty) marks src as a package
-│   ├── emotion_detection.py        # Emotion detection functions
-│   ├── music_recommender.py        # Music mood mapping + song recommendation
+├── .venv/                     # Local virtual environment (excluded from repo)
+├── data/
+│   ├── 278k_labelled_uri.csv  # Moodify dataset (Spotify URIs and mood labels)
+│   └── FER-2013/              # FER-2013 facial emotion dataset (local use only)
 │
-├── .gitignore                      # Keep repo clean (ignoring temp files, cache, etc.)
-├── .python-version                 # Python version control
-├── app.py                          # Streamlit main app
-├── pyproject.toml                  # Poetry dependency management
-├── README.md                       # Project documentation
+├── notebooks/
+│   ├── moodify_eda.ipynb      # EDA on Moodify dataset
+│   └── facial-expression-recognition.ipynb  # Model testing on FER-2013
+│
+├── reports/
+│   └── AI_a3_report_24611687.pdf  # Final report (PDF version)
+│
+├── src/
+│   ├── __init__.py
+│   ├── emotion_detection.py   # Emotion detection using Hugging Face ViT
+│   └── music_recommender.py   # Mood mapping and song recommendation logic
+│
+├── app.py                     # Streamlit frontend application
+├── requirements.txt           # Dependency list (used by Streamlit Cloud)
+├── poetry.lock                # Poetry lock file for package versions
+├── pyproject.toml             # Poetry configuration (project + dependencies)
+├── README.md                  # Project overview and setup instructions
+├── .gitignore                 # Ignore virtual environments and cache
+└── .python-version            # Python version config for Pyenv
 
 ```
 
