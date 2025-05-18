@@ -3,11 +3,13 @@ import random
 
 # Mapping from Hugging Face detected emotions → Moodify moods
 emotion_to_mood = {
-    'happy': 'happy',
-    'neutral': 'calm',
-    'surprise': 'energetic',
+    'angry': 'sad',
     'disgust': 'sad',
-    'sad': 'sad'
+    'fear': 'sad',
+    'sad': 'sad',
+    'happy': 'happy',
+    'surprise': 'energetic',
+    'neutral': 'calm'
 }
 
 def load_moodify_dataset(filepath: str) -> pd.DataFrame:
